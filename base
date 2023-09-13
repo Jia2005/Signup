@@ -1,0 +1,39 @@
+<!DOCTYPE.html>
+<html>
+<head>
+<title> Sign Up </title>
+</head>
+<body bgcolor="orange" style ="margin:25px;">
+<form action="action_page.php" style="border: 5px solid lightgoldenrodyellow;">
+  <div class="container">
+    <h1 align="center" style="align-items: center;border-bottom: 10px;border-top: 10px;border-right: 1em;border-left: 1em;">Sign Up</h1>
+    <p align="center">Please fill this form to create an account.</p>
+    <hr>
+    <label for="email" align="center"><b style="
+    border-bottom-style: dashed;">Email</b></label>
+    <input type="text" placeholder="Enter Email" align="center" name="email" required="" style="">
+    <hr>
+    <label for="psw" align="center"><b style="
+    border-bottom-style: dashed;">Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required="">
+    <hr>
+    <label for="psw-repeat" align="center"><b style="border-bottom-style: dashed;">Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required="">
+    <hr>
+    <label>
+    <input type="checkbox" checked="checked" name="remember" style="center:15px"> Remember me
+    </label>
+    <hr>
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms &amp; Conditions.</a></p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+</form>
+<p align="center">For any queries, connect to us on our email:-</p>
+<p align="center"> <a href="#" style="color:dodgerblue">Sample.xyz@gmail.com</a></p> 
+<p align="center">Connect with us on our social media accounts:- </p>
+</body>
+</html>
