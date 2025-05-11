@@ -1,13 +1,20 @@
-import { HashRouter, Route, Routes } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Auth from './Auth';
+import Home from './Home';
+import './Style.css';
 
-const App = () => {
+function App() {
   return (
-    <HashRouter>
+    <Router>
       <Routes>
-        <Route path="/" element={<Signup />} />
+        <Route path="/" element={<Auth />} />
+        <Route path="/home" element={<Home />} />
+        {/* Redirect any unknown paths to the auth page */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </HashRouter>
+    </Router>
   );
-};
+}
 
 export default App;

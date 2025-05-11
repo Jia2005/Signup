@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import { auth } from './../firebase';
+import { auth } from '../firebase';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -19,7 +19,9 @@ function Login() {
     if (email === SAMPLE_EMAIL && password === SAMPLE_PASSWORD) {
       // Sample login successful
       console.log("Sample login successful!");
-      navigate('/home');
+      // Extract username from email to pass to home page
+      const username = email.split('@')[0];
+      navigate(`/home?demo=${username}`);
       return;
     }
     

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import { auth, db, doc, setDoc } from './../firebase';
+import { auth, db, doc, setDoc } from '../firebase';
 
 function SignUp() {
   const [name, setName] = useState('');
@@ -16,6 +16,7 @@ function SignUp() {
   const SAMPLE_PASSWORD = "newuser123";
 
   const signUpUser = async (email, password) => {
+    // If using sample credentials, return a mock success response
     if (email === SAMPLE_EMAIL && password === SAMPLE_PASSWORD) {
       return { 
         success: true, 
