@@ -18,6 +18,7 @@ const Signup = () => {
 
   // Demo credentials
   const DEMO_LOGIN = { email: 'Peter@gmail.com', password: 'Peter#123' };
+  //you can also use email: James@gmail.com and password: James#123
 
   const GOOGLE_CLIENT_ID = "your_google_client_id";  // enter your google client id here
   const USERS_KEY = 'app_users';
