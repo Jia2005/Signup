@@ -14,7 +14,7 @@ I've been there too... staring at the screen at 2 AM wondering why OAuth flows h
 
 This repo contains different implementations of authentication systems in various tech stacks, so you can pick whatever suits your project best. 
 
-No more reinventing the wheel or getting stuck in authentication hell!
+No more reinventing the wheel or getting stuck in authentication hell! 🎯😇
 
 ## 🚀 Available Implementations
 
