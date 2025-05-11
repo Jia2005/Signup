@@ -20,7 +20,9 @@ No more reinventing the wheel or getting stuck in authentication hell! 🎯😇
 
 ### [React with CSS](https://github.com/Jia2005/Signup/tree/main/React%20with%20CSS)
 
-A clean and customizable authentication system built with React and pure CSS. Perfect for those who want complete control over their styling without the overhead of a utility framework. 🎛️🎨
+A clean and customizable authentication system built with React and pure CSS. Perfect for those who want complete control over their styling without the overhead of a utility framework. 
+
+(PS: **has firebase setup too**)
 
 *Why this combo rocks:*
 
@@ -39,10 +41,10 @@ Modern, responsive authentication pages built with React and styled using Tailwi
 
 *Why this stack is chef's kiss:*
 
-- React handles all the state wizardry while you focus on features 🧙‍♂️⚛️
+- React handles all the state wizardry while you focus on features ⚛️
 - Tailwind CSS lets you style without writing a single CSS file (hallelujah!) 🙌
 - Build in days what would take weeks with custom CSS ⏱️
-- Google sign-in integration because nobody wants to remember another password 🔑👌
+- Google sign-in integration because nobody wants to remember another password 🔑
 
 #### 👀 [See how it looks](https://github.com/Jia2005/Signup/blob/main/React%20with%20Tailwindcss/README.md#-loginsignup-with-google-api-integration)
 #### 🛠️ [Installation & Setup](https://github.com/Jia2005/Signup/blob/main/React%20with%20Tailwindcss/README.md#%EF%B8%8F-installation)
@@ -55,10 +57,10 @@ A vanilla implementation using plain HTML, CSS, and JavaScript - perfect for sim
 
 *Why go old school:*
 
-- No npm install nightmares - just pure web goodness 🏝️✨
-- Loads faster than you can say "framework bloat" ⚡️🚀 
-- Perfect for those "I just need a simple login page" moments 🔑💻
-- Great for learning how things work under the hood (knowledge is power!) 🧠💪
+- No npm install nightmares - just pure web goodness ✨
+- Loads faster than you can say "framework bloat" ⚡️
+- Perfect for those "I just need a simple login page" moments 💻
+- Great for learning how things work under the hood (knowledge is power!) 💪
 
 #### 👀 See how it looks (Coming Soon)
 #### 🛠️ Installation & Setup (Coming Soon)
