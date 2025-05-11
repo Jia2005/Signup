@@ -16,11 +16,20 @@ const Signup = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
+  // Demo credentials
+  const DEMO_LOGIN = { email: 'Peter@gmail.com', password: 'Peter#123' };
+
   const GOOGLE_CLIENT_ID = "your_google_client_id";  // enter your google client id here
   const USERS_KEY = 'app_users';
   const GOOGLE_USERS_KEY = 'app_google_users';
 
   useEffect(() => {
+    const users = getUsers();
+    if (!users.some(user => user.email === DEMO_LOGIN.email)) {
+      users.push({ name: 'Demo User', email: DEMO_LOGIN.email, password: DEMO_LOGIN.password });
+      localStorage.setItem(USERS_KEY, JSON.stringify(users));
+    }
+    
     const loadGoogleScript = () => {
       if (document.querySelector('script[src="https://accounts.google.com/gsi/client"]')) {
         initializeGoogleSignIn();
@@ -128,7 +137,7 @@ const Signup = () => {
         }
         
         saveUser({ email, name }, true);
-        navigate('/documents');
+        navigate('/home');
       } catch (error) {
         setError("Failed to create account with Google. Please try again.");
       }
@@ -148,7 +157,7 @@ const Signup = () => {
         }
         
         localStorage.setItem('isAuthenticated', 'true');
-        navigate('/documents');
+        navigate('/home');
       } catch (error) {
         setError("Failed to sign in with Google. Please try again.");
       }
@@ -205,7 +214,7 @@ const Signup = () => {
         }
         
         localStorage.setItem('isAuthenticated', 'true');
-        navigate('/documents');
+        navigate('/home');
       } else {
         const { name, email, password, confirmPassword } = formData;
         
@@ -230,7 +239,7 @@ const Signup = () => {
         }
         
         saveUser({ name, email, password });
-        navigate('/documents');
+        navigate('/home');
       }
     } catch (error) {
       setError(error.message);
@@ -256,15 +265,15 @@ const Signup = () => {
 
   const renderForm = (isLoginForm) => (
     <div className="flex-1">
-      <h1 className="text-3xl font-bold mb-3 text-gray-800">
+      <h1 className="text-3xl font-bold mb-3 text-gray-800 text-center">
         {isLoginForm ? 'Welcome Back' : 'Create Account'}
       </h1>
-      <p className="text-gray-500 mb-6">
+      <p className="text-gray-500 mb-6 text-center">
         {isLoginForm ? 'Please enter your details to sign in' : 'Sign up to get started'}
       </p>
       
       {error && (
-        <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm">
+        <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm text-center">
           {error}
         </div>
       )}
@@ -280,7 +289,8 @@ const Signup = () => {
               placeholder="Full Name"
               className="w-full px-5 py-3 rounded-lg bg-gray-50 
                         focus:outline-none focus:ring-2 focus:ring-violet-600 
-                        placeholder-gray-400 text-gray-600 border border-gray-200"
+                        placeholder-gray-400 text-gray-600 border border-gray-200
+                        text-center"
             />
           </div>
         )}
@@ -294,7 +304,8 @@ const Signup = () => {
             placeholder="Email Address"
             className="w-full px-5 py-3 rounded-lg bg-gray-50 
                       focus:outline-none focus:ring-2 focus:ring-violet-600 
-                      placeholder-gray-400 text-gray-600 border border-gray-200"
+                      placeholder-gray-400 text-gray-600 border border-gray-200
+                      text-center"
           />
         </div>
         
@@ -307,7 +318,8 @@ const Signup = () => {
             placeholder={isLoginForm ? "Password" : "Create Password"}
             className="w-full px-5 py-3 rounded-lg bg-gray-50 
                       focus:outline-none focus:ring-2 focus:ring-violet-600 
-                      placeholder-gray-400 text-gray-600 border border-gray-200"
+                      placeholder-gray-400 text-gray-600 border border-gray-200
+                      text-center"
           />
         </div>
         
@@ -321,7 +333,8 @@ const Signup = () => {
               placeholder="Confirm Password"
               className="w-full px-5 py-3 rounded-lg bg-gray-50 
                         focus:outline-none focus:ring-2 focus:ring-violet-600 
-                        placeholder-gray-400 text-gray-600 border border-gray-200"
+                        placeholder-gray-400 text-gray-600 border border-gray-200
+                        text-center"
             />
           </div>
         )}
@@ -366,33 +379,13 @@ const Signup = () => {
         <div className="relative md:w-1/2">
           <div className="absolute inset-0 p-8 md:p-12 flex flex-col z-10">
             {renderForm(true)}
-            <p className="text-center text-gray-600 text-sm mt-4">
-              Don't have an account?{' '}
-              <button 
-                type="button"
-                onClick={toggleAuthMode}
-                className="text-violet-600 hover:text-violet-700 font-medium"
-              >
-                Sign up
-              </button>
-            </p>
           </div>
         </div>
         
         <div className="relative md:w-1/2">
-          <div className="absolute inset-0 p-8 md:p-12 z-10 max-h-full overflow-auto">
+          <div className="absolute inset-0 p-8 md:p-12 z-10 max-h-full overflow-hidden">
             <div className="flex flex-col h-full mb-8">
               {renderForm(false)}
-              <p className="text-center text-gray-600 text-sm mt-4">
-                Already have an account?{' '}
-                <button 
-                  type="button"
-                  onClick={toggleAuthMode}
-                  className="text-violet-600 hover:text-violet-700 font-medium"
-                >
-                  Sign in
-                </button>
-              </p>
             </div>
           </div>
           
@@ -401,30 +394,30 @@ const Signup = () => {
                       transition-transform duration-1000 ease-in-out
                       ${isLogin ? 'translate-x-0' : '-translate-x-full'}`}
           >
-            {isLogin ? (
+            {!isLogin ? (
               <>
-                <h2 className="text-3xl font-bold mb-6">Welcome Back!</h2>
-                <p className="text-white/80 mb-8 text-lg">
+                <h2 className="text-3xl font-bold mb-6 text-center">Already have an account?</h2>
+                <p className="text-white/80 mb-8 text-lg text-center">
                 We're glad to see you again! Log in with your personal info to continue your journey.                  
                 </p>
                 <button
                   onClick={toggleAuthMode}
                   className="px-8 py-3 border-2 border-white rounded-lg text-base font-medium
-                           hover:bg-white hover:text-violet-600 transition-all duration-300 self-start"
+                           hover:bg-white hover:text-violet-600 transition-all duration-300 mx-auto"
                 >
                   Sign Up
                 </button>
               </>
             ) : (
               <>
-                <h2 className="text-3xl font-bold mb-6">New Here?</h2>
-                <p className="text-white/80 mb-8 text-lg">
+                <h2 className="text-3xl font-bold mb-6 text-center">New Here?</h2>
+                <p className="text-white/80 mb-8 text-lg text-center">
                   Join us to discover amazing opportunities and explore new possibilities!
                 </p>
                 <button
                   onClick={toggleAuthMode}
                   className="px-8 py-3 border-2 border-white rounded-lg text-base font-medium
-                           hover:bg-white hover:text-violet-600 transition-all duration-300 self-start"
+                           hover:bg-white hover:text-violet-600 transition-all duration-300 mx-auto"
                 >
                   Sign In
                 </button>
