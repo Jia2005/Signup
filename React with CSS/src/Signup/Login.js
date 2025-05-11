@@ -9,7 +9,7 @@ function Login() {
   const navigate = useNavigate();
 
   // Sample credentials that will work without Firebase
-  const SAMPLE_EMAIL = "Peter@example.com";
+  const SAMPLE_EMAIL = "Peter@gmail.com";
   const SAMPLE_PASSWORD = "Peter#123";
 
   const handleSubmit = async (event) => {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth } from './firebase';
+import { auth } from './../firebase';
 
 function Home() {
   const [username, setUsername] = useState("Friend");
@@ -38,9 +38,7 @@ function Home() {
   };
 
   return (
-    <div className="home-container">
-      {showConfetti && <div className="confetti"></div>}
-      
+    <div className="home-container">      
       <div className="welcome-card">
         <div className="success-icon">✅</div>
         <h1>Yayy! Login Successful</h1>
