@@ -198,10 +198,6 @@ function SignUp() {
           {loading ? 'Creating Account...' : 'Sign Up'}
         </button>
       </form>
-      
-      <div className="mt-6 text-center text-sm text-gray-600">
-        <p>Demo Account: James@gmail.com / James123</p>
-      </div>
     </div>
   );
 }
