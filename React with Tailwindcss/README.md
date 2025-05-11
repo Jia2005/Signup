@@ -1,4 +1,4 @@
-# 🚀 Sliding Login/Signup Form with React & Tailwind CSS
+# 🚀 Login/Signup with Google API Integration
 
 Hey guys! 👋 Made this sliding login/signup thingy with React and Tailwind CSS! 
 
