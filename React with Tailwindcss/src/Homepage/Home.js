@@ -110,14 +110,7 @@ function Home() {
           0% { transform: perspective(400px) rotateY(0deg); }
           100% { transform: perspective(400px) rotateY(360deg); }
         }
-        .animate-confetti-1 { animation: confetti-fall-1 5s linear infinite; }
-        .animate-confetti-2 { animation: confetti-fall-2 7s linear infinite; animation-delay: 0.2s; }
-        .animate-confetti-3 { animation: confetti-fall-1 4s linear infinite; animation-delay: 0.4s; }
-        .animate-confetti-4 { animation: confetti-fall-2 6s linear infinite; animation-delay: 0.6s; }
-        .animate-confetti-5 { animation: confetti-fall-1 8s linear infinite; animation-delay: 0.8s; }
-        .animate-confetti-6 { animation: confetti-fall-2 5s linear infinite; animation-delay: 1s; }
-        .animate-confetti-7 { animation: confetti-fall-1 7s linear infinite; animation-delay: 1.2s; }
-        
+                  
         .tick-container {
           transform-style: preserve-3d;
           transform: perspective(400px);
