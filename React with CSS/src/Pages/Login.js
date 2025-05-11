@@ -1,16 +1,27 @@
 import React, { useState } from 'react';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import { auth } from './../firebase';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
+  // Sample credentials that will work without Firebase
+  const SAMPLE_EMAIL = "Peter@example.com";
+  const SAMPLE_PASSWORD = "Peter#123";
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     
-    const auth = getAuth();
+    // Check if using the sample credentials
+    if (email === SAMPLE_EMAIL && password === SAMPLE_PASSWORD) {
+      // Sample login successful
+      console.log("Sample login successful!");
+      navigate('/home');
+      return;
+    }
     
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -36,32 +47,28 @@ function Login() {
     <div>
       <form name="login" onSubmit={handleSubmit} className='logform'>
         <br /><br />
-        <h1 align="center" >Login</h1>
+        <h1 align="center">Login</h1>
         <div className='field'>
-        <label>
-          Email
-        </label>
-        <input
+          <label>Email</label>
+          <input
             className='in'
             type="email"
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter Email Address"
+            placeholder="Enter Email Address" 
             style={{ fontSize: '16px' }}
           />
         </div>
         <div className='field'>
-        <label>
-          Password
-        </label>
-        <input
+          <label>Password</label>
+          <input
             className='in'
             type="password"
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter Password"
+            placeholder="Enter Password" 
             style={{ fontSize: '16px' }}
           />
         </div>
