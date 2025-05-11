@@ -64,21 +64,21 @@ function Home() {
         </div>
         
         <div className="grid grid-cols-3 gap-4 mb-8">
-          <div className={`bg-gradient-to-br from-purple-50 to-indigo-50 p-4 rounded-xl shadow-sm text-center transition-all duration-500 transform ${animate ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`} style={{ transitionDelay: '100ms' }}>
+          <div className={`bg-gradient-to-br from-purple-50 to-indigo-50 p-4 rounded-xl shadow-sm text-center transition-all duration-500 transform ${animate ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`} style={{ transitionDelay: '50ms' }}>
             <p className="text-2xl font-bold text-indigo-600">5</p>
             <p className="text-gray-600 text-sm">Messages</p>
           </div>
-          <div className={`bg-gradient-to-br from-indigo-50 to-blue-50 p-4 rounded-xl shadow-sm text-center transition-all duration-500 transform ${animate ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`} style={{ transitionDelay: '200ms' }}>
+          <div className={`bg-gradient-to-br from-indigo-50 to-blue-50 p-4 rounded-xl shadow-sm text-center transition-all duration-500 transform ${animate ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`} style={{ transitionDelay: '250ms' }}>
             <p className="text-2xl font-bold text-blue-600">2</p>
             <p className="text-gray-600 text-sm">Notifications</p>
           </div>
-          <div className={`bg-gradient-to-br from-blue-50 to-purple-50 p-4 rounded-xl shadow-sm text-center transition-all duration-500 transform ${animate ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`} style={{ transitionDelay: '300ms' }}>
+          <div className={`bg-gradient-to-br from-blue-50 to-purple-50 p-4 rounded-xl shadow-sm text-center transition-all duration-500 transform ${animate ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`} style={{ transitionDelay: '450ms' }}>
             <p className="text-2xl font-bold text-purple-600">7</p>
             <p className="text-gray-600 text-sm">Updates</p>
           </div>
         </div>
         
-        <div className={`bg-indigo-50 p-6 rounded-xl mb-8 transition-all duration-500 transform ${animate ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`} style={{ transitionDelay: '400ms' }}>
+        <div className={`bg-indigo-50 p-6 rounded-xl mb-8 transition-all duration-500 transform ${animate ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`} style={{ transitionDelay: '650ms' }}>
           <h3 className="font-medium text-gray-800 mb-2">Today's Activity</h3>
           <div className="space-y-3">
             <div className="flex items-center">
@@ -99,7 +99,7 @@ function Home() {
         <button 
           onClick={handleLogout}
           className={`w-full py-3 bg-gradient-to-r from-red-500 to-pink-500 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition duration-300 transform ${animate ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-          style={{ transitionDelay: '500ms' }}
+          style={{ transitionDelay: '1000ms' }}
         >
           Logout
         </button>
