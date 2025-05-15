@@ -47,7 +47,8 @@
         }
         
         .right-panel {
-            background: linear-gradient(135deg, #ff6b6b, #ff3a7a);
+            background: #6a11cb;
+            background: linear-gradient(to right, #6a11cb, #8736ff);
             color: #fff;
             padding: 40px;
             display: flex;
@@ -70,7 +71,7 @@
         input {
             width: 100%;
             padding: 12px 15px;
-            background: #f5f5f5;
+            background: #f0f2fa;
             border: none;
             border-radius: 5px;
             font-size: 14px;
@@ -80,7 +81,7 @@
         }
         
         input:focus {
-            background: #e5e5e5;
+            background: #e8ebf7;
         }
         
         button {
@@ -95,12 +96,12 @@
         }
         
         .signin-btn {
-            background-color: #ff3a7a;
+            background-color: #6a11cb;
             color: #fff;
         }
         
         .signin-btn:hover {
-            background-color: #e5336d;
+            background-color: #5a0cb5;
         }
         
         .signup-btn {
@@ -119,7 +120,7 @@
         }
         
         .link {
-            color: #ff3a7a;
+            color: #6a11cb;
             text-decoration: none;
             font-weight: 500;
             cursor: pointer;
@@ -185,6 +186,99 @@
             display: block;
         }
         
+        /* Dashboard styles */
+        .dashboard {
+            display: none;
+        }
+        
+        .dashboard-header {
+            background: #6a11cb;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .dashboard-logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-info a {
+            margin-left: 15px;
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid white;
+            border-radius: 4px;
+        }
+        
+        .dashboard-content {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .welcome-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .welcome-card h1 {
+            color: #6a11cb;
+            margin-bottom: 15px;
+        }
+        
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px; 
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: #6a11cb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .card h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
         /* Responsive design */
         @media (max-width: 768px) {
             .container {
@@ -212,6 +306,10 @@
             
             .container.signup-mode .right-panel {
                 transform: translateY(-100%);
+            }
+            
+            .card-container {
+                flex-direction: column;
             }
         }
     </style>
