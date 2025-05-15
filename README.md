@@ -51,7 +51,7 @@ Modern, responsive authentication pages built with React and styled using Tailwi
 
 ---
 
-### [HTML + CSS + JS](https://github.com/Jia2005/Signup) (Coming Soon!)
+### [HTML + CSS + JS](https://github.com/Jia2005/Signup/tree/main/HTML%20%26%20CSS)
 
 A vanilla implementation using plain HTML, CSS, and JavaScript - perfect for simple projects or when you don't need a framework. 
 
